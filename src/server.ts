@@ -2,7 +2,6 @@ require('dotenv').config();
 
 import express from 'express';
 import bodyParser from 'body-parser';
-import {filterImageFromURL, deleteLocalFiles} from './util/util';
 import { IndexRouter } from './controllers/index.router';
 
 (async () => {
@@ -20,7 +19,7 @@ import { IndexRouter } from './controllers/index.router';
 
   // Root Endpoint
   // Displays a simple message to the user
-  app.get( "/", async ( req, res ) => {
+  app.get( "/", async ( _req, res ) => {
     res.send('/');
   } );
   
