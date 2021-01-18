@@ -40,6 +40,9 @@ venv/
 # Ignore .env
 .env
 
+# Ignore .pem
+*.pem
+
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
