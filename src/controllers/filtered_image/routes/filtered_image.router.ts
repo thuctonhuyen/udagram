@@ -1,7 +1,7 @@
 import { Router, Request, Response } from 'express';
 import _ from 'lodash';
 import isUrl from 'is-url';
-import isImageUrl from 'is-image-url';
+const isImageUrl = require('is-image-url');
 
 import {filterImageFromURL, deleteLocalFiles} from '../../../util/util';
 
