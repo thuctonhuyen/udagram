@@ -1,6 +1,7 @@
 import { Router, Request, Response } from 'express';
 import _ from 'lodash';
 import isUrl from 'is-url';
+import isImageUrl from 'is-image-url';
 
 import {filterImageFromURL, deleteLocalFiles} from '../../../util/util';
 
@@ -11,7 +12,7 @@ router.get('/', async(req: Request, res: Response) => {
   try {
     const imageUrl:string = _.get(req, 'query.image_url');
 
-    if (!isUrl(imageUrl)) {
+    if (!imageUrl || !isUrl(imageUrl) || !isImageUrl(imageUrl)) {
       return res.status(400).send({ message: 'Valid URL is required.' });
     }
 
